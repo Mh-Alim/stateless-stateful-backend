@@ -8,6 +8,14 @@ interface Game {
 export class GameManager {
   private games: Game[] = [];
 
+  private static instance: GameManager;
+  static getInstance() {
+    if (this.instance) return this.instance;
+    return (this.instance = new GameManager());
+  }
+  private constructor() {
+    this.games = [];
+  }
   public addGame(game: Game) {
     this.games.push(game);
   }
@@ -26,4 +34,4 @@ export class GameManager {
   }
 }
 
-export const games = new GameManager();
+export const games = GameManager.getInstance();
