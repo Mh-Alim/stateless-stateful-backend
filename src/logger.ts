@@ -2,6 +2,6 @@ import { games } from "./store";
 
 export const logger = () => {
   setInterval(() => {
-    console.log(games);
+    games.logState();
   }, 5000);
 };

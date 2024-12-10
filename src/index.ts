@@ -4,7 +4,7 @@ import { logger } from "./logger";
 logger();
 
 setInterval(() => {
-  games.push({
+  games.addGame({
     id: Math.random().toString(),
     whitePlayer: "alice",
     blackPlayler: "bob",
